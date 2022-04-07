@@ -54,6 +54,16 @@ class ViewController: UIViewController {
         // Set up lyrics
         lyricsTextView.text = arrOfMusic[0].lyrics
         
+        // Blur background
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView()
+        blurEffectView.frame = CGRect(x: 0, y: 0, width: imageBackground.frame.width + 30 , height: imageBackground.frame.height)
+        blurEffectView.center = imageBackground.center
+        self.imageBackground.addSubview(blurEffectView)
+        UIView.animate(withDuration: 5) {
+            blurEffectView.effect = blurEffect
+        }
+        
         // Set up background
         imageBackground.image = UIImage(named: "happy.jpg")
         
