@@ -114,6 +114,10 @@ class ViewController: UIViewController {
         changeHeartIcon()
     }
     
+    @objc func changeLyrics() {
+        arrOfMusic[currMusic].lyrics = lyricsTextView.text
+    }
+    
     func changeMusic() {
         imageCoverImage.image = arrOfMusic[currMusic].image
         imageBackground.image = arrOfMusic[currMusic].image
